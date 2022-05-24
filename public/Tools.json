@@ -3,7 +3,7 @@
         "_id": 1,
         "name": "Light Tester",
         "image": "https://i.ibb.co/FBdM4Bt/ligh-tester-removebg-preview.png",
-        "description": "This electric tools is very helpful for electrician to check the electricity.",
+        "description": "This electric tools is very helpful for electrician to check the electricity safely.",
         "minimumOrderQuantity": 500,
         "availableOrderQuantity": 10000,
         "price": 59.99
@@ -11,7 +11,7 @@
     {
         "_id": 2,
         "name": "Nose Piller",
-        "image": "https://i.ibb.co/WWV5z13/needle-nose-piler-removebg-preview.png",
+        "image": "https://i.ibb.co/Xj9xHsT/nose-piller-removebg-preview.png",
         "description": "This electric tools is very helpful for electrician to open part that are wrapped.",
         "minimumOrderQuantity": 500,
         "availableOrderQuantity": 10000,
