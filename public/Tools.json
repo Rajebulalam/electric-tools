@@ -1,0 +1,56 @@
+[
+    {
+        "_id": 1,
+        "name": "Light Tester",
+        "image": "https://i.ibb.co/FBdM4Bt/ligh-tester-removebg-preview.png",
+        "description": "This electric tools is very helpful for electrician to check the electricity.",
+        "minimumOrderQuantity": 500,
+        "availableOrderQuantity": 10000,
+        "price": 59.99
+    },
+    {
+        "_id": 2,
+        "name": "Nose Piller",
+        "image": "https://i.ibb.co/WWV5z13/needle-nose-piler-removebg-preview.png",
+        "description": "This electric tools is very helpful for electrician to open part that are wrapped.",
+        "minimumOrderQuantity": 500,
+        "availableOrderQuantity": 10000,
+        "price": 49.99
+    },
+    {
+        "_id": 3,
+        "name": "Pulley Piller",
+        "image": "https://i.ibb.co/YB2WvkZ/pulley-piller-removebg-preview.png",
+        "description": "You can use this on various part with this simple things and it's design very good.",
+        "minimumOrderQuantity": 500,
+        "availableOrderQuantity": 10000,
+        "price": 39.99
+    },
+    {
+        "_id": 4,
+        "name": "Soldering Iron",
+        "image": "https://i.ibb.co/1XRSLgs/solderimg-iron-removebg-preview.png",
+        "description": "Its very essential element and helpful for electrician to check the electricity soldering.",
+        "minimumOrderQuantity": 500,
+        "availableOrderQuantity": 10000,
+        "price": 59.99
+    },
+    {
+        "_id": 5,
+        "name": "Fluke Tool",
+        "image": "https://i.ibb.co/bvYbBhG/fluke-Main-removebg-preview.png",
+        "description": "In the modern life you should use modern equipment for work. It's more helpful for electrician.",
+        "minimumOrderQuantity": 500,
+        "availableOrderQuantity": 10000,
+        "price": 59.99
+    },
+    {
+        "_id": 6,
+        "name": "Freight Tool",
+        "image": "https://i.ibb.co/9Y3tjZ8/harbor-freight-tools-removebg-preview.png",
+        "description": "This electric tool is used for cutting fiber and its very helpful for electrician.",
+        "minimumOrderQuantity": 500,
+        "availableOrderQuantity": 10000,
+        "price": 59.99
+    }
+]
