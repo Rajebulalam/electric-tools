@@ -3,7 +3,7 @@ import React from 'react';
 const Collection = () => {
     return (
         <section style={{ backgroundColor: '#FBFAF9 ' }} className='p-8'>
-            <h2 style={{ fontFamily: 'Merienda' }} className='text-center font-bold text-3xl text-secondary py-4'>Top Collection</h2>
+            <h2 style={{ fontFamily: 'Merienda' }} className='text-center font-bold text-3xl text-secondary py-4'>Top Collections</h2>
             <p className='text-gray-700 font-medium text-center pb-8'>Our Best Electric Tools Collection is On</p>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 <div style={{ borderRadius: '0px 30px 0px 30px' }} className='bg-yellow-100 h-[350px]'>

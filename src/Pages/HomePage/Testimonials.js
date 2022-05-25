@@ -2,7 +2,7 @@ import React from 'react';
 
 const Testimonials = () => {
     return (
-        <section className='py-10'>
+        <section className='py-10 pb-16'>
             <h2 style={{ fontFamily: 'Merienda' }} className='text-center font-bold text-3xl py-4 pb-8 text-secondary'>What Our Clients Say?</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 <div class="card lg:max-w-lg bg-base-100 shadow-xl">
