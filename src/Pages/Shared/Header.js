@@ -16,7 +16,7 @@ const Header = () => {
     return (
         <header className='bg-primary md:px-20 pt-3'>
             <div class="navbar">
-                <div class="navbar-start">
+                <div class="navbar-start w-full sm:w-4/12">
                     <div class="dropdown">
                         <label tabindex="0" class="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -27,7 +27,7 @@ const Header = () => {
                     </div>
                     <Link to='/' class="normal-case text-3xl font-bold text-secondary">Electric Tools.</Link>
                 </div>
-                <div class="navbar-end md:navbar-center hidden lg:flex">
+                <div class="navbar-end hidden w-8/12 lg:flex">
                     <ul class="menu menu-horizontal p-0">
                         {menuItem}
                     </ul>

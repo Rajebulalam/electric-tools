@@ -52,16 +52,16 @@ const Footer = () => {
                     </div>
                     <div className='pt-3'>
                         <Link className='px-2' to='/'>
-                            <FontAwesomeIcon className='font-awesome text-white bg-black hover:bg-secondary p-2 rounded-full text-3xl' icon={faGithub}></FontAwesomeIcon>
+                            <FontAwesomeIcon className='font-awesome text-black bg-white hover:bg-secondary p-2 rounded-full text-3xl' icon={faGithub}></FontAwesomeIcon>
                         </Link>
                         <Link className='px-2' to='/'>
-                            <FontAwesomeIcon className='font-awesome text-white bg-black hover:bg-secondary p-2 rounded-full text-3xl' icon={faFacebook}></FontAwesomeIcon>
+                            <FontAwesomeIcon className='font-awesome text-black bg-white hover:bg-secondary p-2 rounded-full text-3xl' icon={faFacebook}></FontAwesomeIcon>
                         </Link>
                         <Link className='px-2' to='/'>
-                            <FontAwesomeIcon className='font-awesome text-white bg-black hover:bg-secondary p-2 rounded-full text-3xl' icon={faLinkedin}></FontAwesomeIcon>
+                            <FontAwesomeIcon className='font-awesome text-black bg-white hover:bg-secondary p-2 rounded-full text-3xl' icon={faLinkedin}></FontAwesomeIcon>
                         </Link>
                         <Link className='px-2' to='/'>
-                            <FontAwesomeIcon className='font-awesome text-white bg-black hover:bg-secondary p-2 rounded-full text-3xl' icon={faDribbble}></FontAwesomeIcon>
+                            <FontAwesomeIcon className='font-awesome text-black bg-white hover:bg-secondary p-2 rounded-full text-3xl' icon={faDribbble}></FontAwesomeIcon>
                         </Link>
                     </div>
                 </div>
