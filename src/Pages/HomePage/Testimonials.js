@@ -12,7 +12,7 @@ const Testimonials = () => {
                     <div class="card-body items-center text-center">
                         <p className='text-gray-600 font-semibold'> <span style={{ fontFamily: 'gerogia' }} className='font-bold text-4xl text-accent'>"</span>I am happy to work with them. There are very responsible. They always keep original product on delivery. They are product quality is very good. </p>
                         <h2 class="card-title font-bold text-2xl">Tabriaz Smith</h2>
-                        <span className='text-secondary font-medium'>CEO of PADMA</span>
+                        <span style={{ fontFamily: 'Merienda' }} className='text-secondary font-medium text-sm'>CEO of PADMA</span>
                     </div>
                 </div>
                 <div class="card lg:max-w-lg bg-white shadow-xl">
@@ -22,7 +22,7 @@ const Testimonials = () => {
                     <div class="card-body items-center text-center">
                         <p className='text-gray-600 font-semibold'> <span style={{ fontFamily: 'gerogia' }} className='font-bold text-4xl text-accent'>"</span>I am happy to work with them. There are very responsible. They always keep original product on delivery. They are product quality is very good. </p>
                         <h2 class="card-title font-bold text-2xl">Haris Luke</h2>
-                        <span className='text-secondary font-medium'>CEO of TISTA</span>
+                        <span style={{ fontFamily: 'Merienda' }} className='text-secondary font-medium text-sm'>CEO of TISTA</span>
                     </div>
                 </div>
                 <div class="card lg:max-w-lg bg-white shadow-xl">
@@ -32,7 +32,7 @@ const Testimonials = () => {
                     <div class="card-body items-center text-center">
                         <p className='text-gray-600 font-semibold'> <span style={{ fontFamily: 'gerogia' }} className='font-bold text-4xl text-accent'>"</span>I am happy to work with them. There are very responsible. They always keep original product on delivery. They are product quality is very good. </p>
                         <h2 class="card-title font-bold text-2xl pt-3">Denial Sams</h2>
-                        <span className='text-secondary font-medium'>CEO of SURMA</span>
+                        <span style={{ fontFamily: 'Merienda' }} className='text-secondary font-medium text-sm'>CEO of SURMA</span>
                     </div>
                 </div>
             </div>
