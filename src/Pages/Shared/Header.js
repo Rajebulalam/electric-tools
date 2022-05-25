@@ -8,13 +8,13 @@ const Header = () => {
         <li className='text-gray-500 hover:text-accent mx-1 font-bold uppercase text-sm'><Link to='/'>Tools</Link></li>
         <li className='text-gray-500 hover:text-accent mx-1 font-bold uppercase text-sm'><Link to='/purchase'>Purchase</Link></li>
         <div>
-            <button class="btn btn-outline w-[110px] mx-1 bg-white text-secondary hover:bg-gradient-to-b hover:from-accent hover:to-neutral">Sign up</button>
-            <button class="btn btn-outline w-[110px] mx-1 sm:mt-2 bg-gradient-to-b from-accent to-neutral text-white hover:bg-gradient-to-b hover:from-white hover:to-white hover:text-secondary hover:border-secondary">Sign in</button>
+            <button class="btn btn-outline w-[110px] mx-1 bg-white text-secondary hover:bg-gradient-to-b hover:from-accent hover:to-neutral"><Link to='/signup'>Sign up</Link></button>
+            <button class="btn btn-outline w-[110px] mx-1 sm:mt-2 bg-gradient-to-b from-accent to-neutral text-white hover:bg-gradient-to-b hover:from-white hover:to-white hover:text-secondary hover:border-secondary"><Link to='/signIn'>Sign in</Link></button>
         </div>
     </>
 
     return (
-        <header className='bg-primary md:px-20 pt-3'>
+        <header className='bg-primary md:px-20 py-3'>
             <div class="navbar">
                 <div class="navbar-start w-full sm:w-4/12">
                     <div class="dropdown">
