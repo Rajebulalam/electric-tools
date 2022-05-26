@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 import Loading from './Shared/Loading';
 import googleIcon from '../images/google.png';
@@ -30,11 +30,14 @@ const SignIn = () => {
     const [authUser, authLoading] = useAuthState(auth);
     const navigate = useNavigate();
 
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
     useEffect(() => {
         if (user || authUser || githubUser || googleUser) {
-            navigate('/home');
+            navigate(from, { replace: true });
         }
-    }, [user, authUser, githubUser, googleUser, navigate]);
+    }, [user, authUser, githubUser, googleUser, navigate, from]);
 
     if (loading || authLoading || githubLoading || googleLoading) {
         return <Loading></Loading>;
