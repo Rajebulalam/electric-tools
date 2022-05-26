@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import auth from '../firebase.init';
+import Loading from './Shared/Loading';
+import googleIcon from '../images/google.png';
+import githubIcon from '../images/github.png';
+import faceBookIcon from '../images/facebook.png';
 
 const SignIn = () => {
 
@@ -10,18 +16,49 @@ const SignIn = () => {
         formState: { errors },
     } = useForm();
 
-    const onSubmit = (data) => console.log(data);
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+
+    const [signInWithGithub, githubUser, githubLoading, githubError] = useSignInWithGithub(auth);
+
+    const [authUser, authLoading] = useAuthState(auth);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (user || authUser || githubUser || googleUser) {
+            navigate('/home');
+        }
+    }, [user, authUser, githubUser, googleUser, navigate]);
+
+    if (loading || authLoading || githubLoading || googleLoading) {
+        return <Loading></Loading>;
+    }
+
+    let signInError;
+    if (error || googleError || githubError) {
+        signInError = <p>{error?.message || googleError?.message || githubError?.message}</p>
+    }
+
+    const onSubmit = async (data) => {
+        await signInWithEmailAndPassword(data.email, data.password);
+    };
 
     return (
         <section style={{ backgroundColor: '#FBFAF9 ' }} className='px-4 py-14 sm:p-14'>
             <div className='py-8 bg-white rounded-md w-full sm:w-5/12 mx-auto px-6'>
-                <h2 style={{ fontFamily: 'Merienda' }} className='text-center font-bold text-3xl text-secondary pb-6'>Sign up</h2>
+                <h2 style={{ fontFamily: 'Merienda' }} className='text-center font-bold text-3xl text-secondary pb-6'>Sign In</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div class="form-control w-full lg:max-w-lg">
                         <label class="label">
                             <span style={{ fontFamily: 'Merienda' }} class="label-text font-semibold">Email</span>
                         </label>
-                        <input type="text" placeholder="Your Email" class="input input-bordered w-full lg:max-w-lg"
+                        <input type="email" placeholder="Your Email" name='email' id='email' class="input input-bordered w-full lg:max-w-lg"
                             {...register("email", {
                                 required: {
                                     value: true,
@@ -46,7 +83,7 @@ const SignIn = () => {
                         <label class="label">
                             <span style={{ fontFamily: 'Merienda' }} class="label-text font-semibold">Password</span>
                         </label>
-                        <input type="text" placeholder="Password" class="input input-bordered w-full lg:max-w-lg"
+                        <input type="password" placeholder="Password" class="input input-bordered w-full lg:max-w-lg"
                             {...register("password", {
                                 required: {
                                     value: true,
@@ -67,14 +104,23 @@ const SignIn = () => {
                             }
                         </label>
                     </div>
+                    <div>
+                        <p className='text-red-500'>{signInError}</p>
+                    </div>
                     <div className='text-center pt-6'>
                         <button type="submit" className='btn px-8 bg-white text-secondary hover:bg-gradient-to-b hover:from-accent hover:to-neutral hover:text-white'>Sign in</button>
                     </div>
                     <div className='pt-6 flex items-center justify-between'>
-                        <div className=''>
+                        <div>
                             <Link className='text-secondary font-medium' to='/signup'>Create an account?</Link>
                         </div>
-                        <p className='text-secondary font-medium cursor-pointer'>Forget Password?</p>
+                        <button type='submit' className='text-secondary font-medium cursor-pointer'>Forget Password?</button>
+                    </div>
+                    <div class="divider">OR</div>
+                    <div className='flex items-center justify-center pt-4'>
+                        <button onClick={() => signInWithGoogle()} className='p-3 border-2 border-gray-200 w-[60px] h-[60px] mx-2' type="submit"> <img src={googleIcon} alt="google-icon" /> </button>
+                        <button onClick={() => signInWithGithub()} className='p-3 border-2 border-gray-200 w-[60px] h-[60px] mx-2' type="submit"> <img src={githubIcon} alt="google-icon" /> </button>
+                        <button className='p-3 border-2 border-gray-200 w-[60px] h-[60px] mx-2' type="submit"> <img src={faceBookIcon} alt="google-icon" /> </button>
                     </div>
                 </form>
             </div>

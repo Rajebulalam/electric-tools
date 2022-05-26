@@ -1,7 +1,18 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 const Header = () => {
+
+    const [user] = useAuthState(auth);
+    const navigate = useNavigate();
+
+    const logOut = async () => {
+        await signOut(auth);
+        navigate('/signIn');
+    }
 
     const menuItem = <>
         <li className='text-gray-500 hover:text-accent mx-1 font-bold uppercase text-sm'><Link to='/'>Home</Link></li>
@@ -9,7 +20,9 @@ const Header = () => {
         <li className='text-gray-500 hover:text-accent mx-1 font-bold uppercase text-sm'><Link to='/purchase'>Purchase</Link></li>
         <div>
             <button class="btn btn-outline w-[110px] mx-1 bg-white text-secondary hover:bg-gradient-to-b hover:from-accent hover:to-neutral"><Link to='/signup'>Sign up</Link></button>
-            <button class="btn btn-outline w-[110px] mx-1 sm:mt-2 bg-gradient-to-b from-accent to-neutral text-white hover:bg-gradient-to-b hover:from-white hover:to-white hover:text-secondary hover:border-secondary"><Link to='/signIn'>Sign in</Link></button>
+            {
+                user ? <button onClick={logOut} class="btn btn-outline w-[110px] mx-1 sm:mt-2 bg-gradient-to-b from-accent to-neutral text-white hover:bg-gradient-to-b hover:from-white hover:to-white hover:text-secondary hover:border-secondary"><Link to='/signIn'>Sign Out</Link></button> : <button class="btn btn-outline w-[110px] mx-1 sm:mt-2 bg-gradient-to-b from-accent to-neutral text-white hover:bg-gradient-to-b hover:from-white hover:to-white hover:text-secondary hover:border-secondary"><Link to='/signIn'>Sign in</Link></button>
+            }
         </div>
     </>
 

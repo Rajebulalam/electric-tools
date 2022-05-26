@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import auth from '../firebase.init';
+import Loading from './Shared/Loading';
+import googleIcon from '../images/google.png';
+import githubIcon from '../images/github.png';
+import faceBookIcon from '../images/facebook.png';
 
 const Signup = () => {
 
@@ -10,7 +16,42 @@ const Signup = () => {
         formState: { errors },
     } = useForm();
 
-    const onSubmit = (data) => console.log(data);
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
+
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+
+    const [signInWithGithub, githubUser, githubLoading, githubError] = useSignInWithGithub(auth);
+
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (user || googleUser || githubUser) {
+            navigate('/home');
+        }
+    }, [user, googleUser, githubUser, navigate]);
+
+    if (loading || updating || googleLoading || githubLoading) {
+        return <Loading></Loading>;
+    }
+
+    let signupError;
+    if (error || updateError || googleError || githubError) {
+        signupError = <p>{error?.message} || {updateError?.message} || {googleError?.message} || {githubError?.message} </p>
+    }
+
+
+    const onSubmit = async (data) => {
+        await createUserWithEmailAndPassword(data.email, data.password);
+        await updateProfile({ displayName: data?.name });
+        alert('User Created & Profile Updated');
+    };
 
     return (
         <section style={{ backgroundColor: '#FBFAF9 ' }} className='px-4 py-14 sm:p-14'>
@@ -40,7 +81,7 @@ const Signup = () => {
                         <label class="label">
                             <span style={{ fontFamily: 'Merienda' }} class="label-text font-semibold">Email</span>
                         </label>
-                        <input type="text" placeholder="Your Email" class="input input-bordered w-full lg:max-w-lg"
+                        <input type="email" placeholder="Your Email" class="input input-bordered w-full lg:max-w-lg"
                             {...register("email", {
                                 required: {
                                     value: true,
@@ -65,7 +106,7 @@ const Signup = () => {
                         <label class="label">
                             <span style={{ fontFamily: 'Merienda' }} class="label-text font-semibold">Password</span>
                         </label>
-                        <input type="text" placeholder="Password" class="input input-bordered w-full lg:max-w-lg"
+                        <input type="password" placeholder="Password" class="input input-bordered w-full lg:max-w-lg"
                             {...register("password", {
                                 required: {
                                     value: true,
@@ -86,11 +127,20 @@ const Signup = () => {
                             }
                         </label>
                     </div>
+                    <div>
+                        <p className='text-red-500'>{signupError}</p>
+                    </div>
                     <div className='text-center pt-6'>
                         <button type="submit" className='btn px-8 bg-white text-secondary hover:bg-gradient-to-b hover:from-accent hover:to-neutral hover:text-white'>Register</button>
                     </div>
                     <div className='pt-4 text-center'>
                         <Link className='text-secondary font-medium' to='/signIn'>Already have an account?</Link>
+                    </div>
+                    <div class="divider">OR</div>
+                    <div className='flex items-center justify-center pt-4'>
+                        <button onClick={() => signInWithGoogle()} className='p-3 border-2 border-gray-200 w-[60px] h-[60px] mx-2' type="submit"> <img src={googleIcon} alt="google-icon" /> </button>
+                        <button onClick={() => signInWithGithub()} className='p-3 border-2 border-gray-200 w-[60px] h-[60px] mx-2' type="submit"> <img src={githubIcon} alt="google-icon" /> </button>
+                        <button className='p-3 border-2 border-gray-200 w-[60px] h-[60px] mx-2' type="submit"> <img src={faceBookIcon} alt="google-icon" /> </button>
                     </div>
                 </form>
             </div>
