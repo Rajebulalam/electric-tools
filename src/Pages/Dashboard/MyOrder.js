@@ -33,8 +33,8 @@ const MyOrder = () => {
 
     return (
         <section>
-            <div class="overflow-x-auto pt-8">
-                <table class="table w-full">
+            <div className="overflow-x-auto pt-8">
+                <table className="table w-full">
                     <thead>
                         <tr style={{ fontFamily: 'Merienda' }} className='text-center text-secondary'>
                             <th>S.N.</th>
@@ -54,17 +54,17 @@ const MyOrder = () => {
                                     <td>{item.email}</td>
                                     <td>{item.productName}</td>
                                     <td>{item.total}</td>
-                                    <td><label type='submit' htmlFor="confirm-modal" class="btn modal-button btn-sm bg-white text-secondary hover:bg-gradient-to-b hover:from-accent hover:to-neutral hover:text-white">
+                                    <td><label type='submit' htmlFor="confirm-modal" className="btn modal-button btn-sm bg-white text-secondary hover:bg-gradient-to-b hover:from-accent hover:to-neutral hover:text-white">
                                         Delete
                                     </label></td>
                                     <td>
-                                        <input type="checkbox" id="confirm-modal" class="modal-toggle" />
-                                        <div class="modal modal-bottom sm:modal-middle">
-                                            <div class="modal-box">
-                                                <label htmlFor="confirm-modal" class="btn btn-sm btn-circle absolute right-2 top-2 bg-black hover:bg-black border-0">✕</label>
-                                                <p class="py-4 text-center pt-8 font-bold">Are you want to delete?</p>
-                                                <div class="modal-action">
-                                                    <label onClick={() => handleDelete(item._id)} htmlFor="confirm-modal" class="btn bg-black hover:bg-black border-0">Yes</label>
+                                        <input type="checkbox" id="confirm-modal" className="modal-toggle" />
+                                        <div className="modal modal-bottom sm:modal-middle">
+                                            <div className="modal-box">
+                                                <label htmlFor="confirm-modal" className="btn btn-sm btn-circle absolute right-2 top-2 bg-black hover:bg-black border-0">✕</label>
+                                                <p className="py-4 text-center pt-8 font-bold">Are you want to delete?</p>
+                                                <div className="modal-action">
+                                                    <label onClick={() => handleDelete(item._id)} htmlFor="confirm-modal" className="btn bg-black hover:bg-black border-0">Yes</label>
                                                 </div>
                                             </div>
                                         </div>
