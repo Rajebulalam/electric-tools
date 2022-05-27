@@ -9,29 +9,29 @@ const Summary = () => {
             <h2 className='text-center font-bold text-3xl pt-4 pb-3 text-secondary' style={{ fontFamily: 'Merienda' }}>Business Summary</h2>
             <p className='text-center pb-14 font-medium'>We are provide the best equipment and service for our customer </p>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6  text-center'>
-                <div class="card lg:max-w-lg bg-base-100 shadow-xl">
-                    <div class="card-body">
+                <div className="card lg:max-w-lg bg-base-100 shadow-xl">
+                    <div className="card-body">
                         <FontAwesomeIcon className='text-3xl pb-2 text-secondary' icon={faPeopleLine}></FontAwesomeIcon>
                         <h2 className='text-4xl font-bold'>550+</h2>
                         <p className='text-secondary font-medium'>Customers</p>
                     </div>
                 </div>
-                <div class="card lg:max-w-lg bg-base-100 shadow-xl">
-                    <div class="card-body">
+                <div className="card lg:max-w-lg bg-base-100 shadow-xl">
+                    <div className="card-body">
                         <FontAwesomeIcon className='text-3xl pb-2 text-secondary' icon={faListCheck}></FontAwesomeIcon>
                         <h2 className='text-4xl font-bold'>150M+</h2>
                         <p className='text-secondary font-medium'>Annual Revenue</p>
                     </div>
                 </div>
-                <div class="card lg:max-w-lg bg-base-100 shadow-xl">
-                    <div class="card-body">
+                <div className="card lg:max-w-lg bg-base-100 shadow-xl">
+                    <div className="card-body">
                         <FontAwesomeIcon className='text-3xl text-secondary' icon={faComment}></FontAwesomeIcon>
                         <h2 className='text-4xl pb-2 font-bold'>10K+</h2>
                         <p className='text-secondary font-medium'>Client Reviews</p>
                     </div>
                 </div>
-                <div class="card lg:max-w-lg bg-base-100 shadow-xl">
-                    <div class="card-body">
+                <div className="card lg:max-w-lg bg-base-100 shadow-xl">
+                    <div className="card-body">
                         <FontAwesomeIcon className='text-3xl pb-2 text-secondary' icon={faPlug}></FontAwesomeIcon>
                         <h2 className='text-4xl font-bold'>100+</h2>
                         <p className='text-secondary font-medium'>Electric Tools</p>

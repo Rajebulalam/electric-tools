@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Tool = ({ tool }) => {
 
-    const { name, image, description, minimumOrderQuantity, availableOrderQuantity, price } = tool;
+    const { _id, name, image, description, minimumOrderQuantity, availableOrderQuantity, price } = tool;
 
     return (
         <div style={{ borderRadius: '35px 0px 35px 0px' }} className='bg-white shadow-lg'>
@@ -17,7 +17,7 @@ const Tool = ({ tool }) => {
                 <p className='text-gray-700'><strong> Minimum Order: <span className='text-secondary'>{minimumOrderQuantity}</span> pc </strong></p>
                 <p className='pb-6 text-gray-600'><strong> Available Order: <span className='text-secondary'>{availableOrderQuantity}</span> pc </strong></p>
             </div>
-            <button style={{ borderRadius: '35px 25px 25px 0px' }} class="btn btn-primary bg-gradient-to-b from-accent to-neutral text-white hover:bg-gradient-to-b hover:from-white hover:to-white hover:text-secondary font-bold hover:border-secondary px-5"><Link to='/purchase'>Purchase Now</Link></button>
+            <button style={{ borderRadius: '35px 25px 25px 0px' }} className="btn btn-primary bg-gradient-to-b from-accent to-neutral text-white hover:bg-gradient-to-b hover:from-white hover:to-white hover:text-secondary font-bold hover:border-secondary px-5"><Link to={`/purchase/${_id}`}>Purchase Now</Link></button>
         </div>
     );
 };

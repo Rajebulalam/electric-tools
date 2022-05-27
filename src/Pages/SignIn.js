@@ -57,11 +57,11 @@ const SignIn = () => {
             <div className='py-8 bg-white rounded-md w-full sm:w-5/12 mx-auto px-6'>
                 <h2 style={{ fontFamily: 'Merienda' }} className='text-center font-bold text-3xl text-secondary pb-6'>Sign In</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <div class="form-control w-full lg:max-w-lg">
-                        <label class="label">
-                            <span style={{ fontFamily: 'Merienda' }} class="label-text font-semibold">Email</span>
+                    <div className="form-control w-full lg:max-w-lg">
+                        <label className="label">
+                            <span style={{ fontFamily: 'Merienda' }} className="label-text font-semibold">Email</span>
                         </label>
-                        <input type="email" placeholder="Your Email" name='email' id='email' class="input input-bordered w-full lg:max-w-lg"
+                        <input type="email" placeholder="Your Email" name='email' id='email' className="input input-bordered w-full lg:max-w-lg"
                             {...register("email", {
                                 required: {
                                     value: true,
@@ -73,20 +73,20 @@ const SignIn = () => {
                                 }
                             })}
                         />
-                        <label class="label">
+                        <label className="label">
                             {
-                                errors.email?.type === 'required' && <span class="text-red-500">{errors.email.message}</span>
+                                errors.email?.type === 'required' && <span className="text-red-500">{errors.email.message}</span>
                             }
                             {
-                                errors.email?.type === 'pattern' && <span class="text-red-500">{errors.email.message}</span>
+                                errors.email?.type === 'pattern' && <span className="text-red-500">{errors.email.message}</span>
                             }
                         </label>
                     </div>
-                    <div class="form-control w-full lg:max-w-lg">
-                        <label class="label">
-                            <span style={{ fontFamily: 'Merienda' }} class="label-text font-semibold">Password</span>
+                    <div className="form-control w-full lg:max-w-lg">
+                        <label className="label">
+                            <span style={{ fontFamily: 'Merienda' }} className="label-text font-semibold">Password</span>
                         </label>
-                        <input type="password" placeholder="Password" class="input input-bordered w-full lg:max-w-lg"
+                        <input type="password" placeholder="Password" className="input input-bordered w-full lg:max-w-lg"
                             {...register("password", {
                                 required: {
                                     value: true,
@@ -98,12 +98,12 @@ const SignIn = () => {
                                 }
                             })}
                         />
-                        <label class="label">
+                        <label className="label">
                             {
-                                errors.password?.type === 'required' && <span class="text-red-500">{errors.password.message}</span>
+                                errors.password?.type === 'required' && <span className="text-red-500">{errors.password.message}</span>
                             }
                             {
-                                errors.password?.type === 'pattern' && <span class="text-red-500">{errors.password.message}</span>
+                                errors.password?.type === 'pattern' && <span className="text-red-500">{errors.password.message}</span>
                             }
                         </label>
                     </div>
@@ -119,7 +119,7 @@ const SignIn = () => {
                         </div>
                         <button type='submit' className='text-secondary font-medium cursor-pointer'>Forget Password?</button>
                     </div>
-                    <div class="divider">OR</div>
+                    <div className="divider">OR</div>
                     <div className='flex items-center justify-center pt-4'>
                         <button onClick={() => signInWithGoogle()} className='p-3 border-2 border-gray-200 w-[60px] h-[60px] mx-2' type="submit"> <img src={googleIcon} alt="google-icon" /> </button>
                         <button onClick={() => signInWithGithub()} className='p-3 border-2 border-gray-200 w-[60px] h-[60px] mx-2' type="submit"> <img src={githubIcon} alt="google-icon" /> </button>

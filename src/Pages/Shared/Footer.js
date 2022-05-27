@@ -43,10 +43,10 @@ const Footer = () => {
                     <h2 style={{ fontFamily: 'Merienda' }} className='font-bold text-2xl text-secondary'>Stay with Newsletter</h2>
                     <p className='text-gray-400 pt-2'>Subscribe to our newsletter to receive early discount offers, updates and new product info.</p>
                     <div className='flex items-center justify-center'>
-                        <div class="form-control pt-4">
-                            <div class="input-group">
+                        <div className="form-control pt-4">
+                            <div className="input-group">
                                 <input className='pl-2' required type="email" name="email" id="email" placeholder='Your Email' />
-                                <button type='submit' class="btn">Go</button>
+                                <button type='submit' className="btn">Go</button>
                             </div>
                         </div>
                     </div>

@@ -1,15 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import useHooks from '../../hooks/useHooks';
 import Tool from './Tool';
 
 const Tools = () => {
 
-    const [tools, setTools] = useState([]);
-
-    useEffect(() => {
-        fetch('tools.json')
-            .then(res => res.json())
-            .then(data => setTools(data))
-    }, []);
+    const [tools, setTools] = useHooks();
 
     return (
         <div style={{ backgroundColor: '#FBFAF9 ' }} className='p-8'>

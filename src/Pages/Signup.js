@@ -58,11 +58,11 @@ const Signup = () => {
             <div className='py-8 bg-white rounded-md w-full sm:w-5/12 mx-auto px-6'>
                 <h2 style={{ fontFamily: 'Merienda' }} className='text-center font-bold text-3xl text-secondary pb-6'>Sign up</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <div class="form-control w-full lg:max-w-lg">
-                        <label class="label">
-                            <span style={{ fontFamily: 'Merienda' }} class="label-text font-semibold">Name</span>
+                    <div className="form-control w-full lg:max-w-lg">
+                        <label className="label">
+                            <span style={{ fontFamily: 'Merienda' }} className="label-text font-semibold">Name</span>
                         </label>
-                        <input type="text" placeholder="Your Name" class="input input-bordered w-full lg:max-w-lg"
+                        <input type="text" placeholder="Your Name" className="input input-bordered w-full lg:max-w-lg"
                             {...register('name', {
                                 required: {
                                     value: true,
@@ -70,18 +70,18 @@ const Signup = () => {
                                 }
                             })}
                         />
-                        <label class="label">
+                        <label className="label">
                             {
                                 errors.name?.type === 'required' &&
-                                <span class="text-red-500">{errors.name.message}</span>
+                                <span className="text-red-500">{errors.name.message}</span>
                             }
                         </label>
                     </div>
-                    <div class="form-control w-full lg:max-w-lg">
-                        <label class="label">
-                            <span style={{ fontFamily: 'Merienda' }} class="label-text font-semibold">Email</span>
+                    <div className="form-control w-full lg:max-w-lg">
+                        <label className="label">
+                            <span style={{ fontFamily: 'Merienda' }} className="label-text font-semibold">Email</span>
                         </label>
-                        <input type="email" placeholder="Your Email" class="input input-bordered w-full lg:max-w-lg"
+                        <input type="email" placeholder="Your Email" className="input input-bordered w-full lg:max-w-lg"
                             {...register("email", {
                                 required: {
                                     value: true,
@@ -93,20 +93,20 @@ const Signup = () => {
                                 }
                             })}
                         />
-                        <label class="label">
+                        <label className="label">
                             {
-                                errors.email?.type === 'required' && <span class="text-red-500">{errors.email.message}</span>
+                                errors.email?.type === 'required' && <span className="text-red-500">{errors.email.message}</span>
                             }
                             {
-                                errors.email?.type === 'pattern' && <span class="text-red-500">{errors.email.message}</span>
+                                errors.email?.type === 'pattern' && <span className="text-red-500">{errors.email.message}</span>
                             }
                         </label>
                     </div>
-                    <div class="form-control w-full lg:max-w-lg">
-                        <label class="label">
-                            <span style={{ fontFamily: 'Merienda' }} class="label-text font-semibold">Password</span>
+                    <div className="form-control w-full lg:max-w-lg">
+                        <label className="label">
+                            <span style={{ fontFamily: 'Merienda' }} className="label-text font-semibold">Password</span>
                         </label>
-                        <input type="password" placeholder="Password" class="input input-bordered w-full lg:max-w-lg"
+                        <input type="password" placeholder="Password" className="input input-bordered w-full lg:max-w-lg"
                             {...register("password", {
                                 required: {
                                     value: true,
@@ -118,12 +118,12 @@ const Signup = () => {
                                 }
                             })}
                         />
-                        <label class="label">
+                        <label className="label">
                             {
-                                errors.password?.type === 'required' && <span class="text-red-500">{errors.password.message}</span>
+                                errors.password?.type === 'required' && <span className="text-red-500">{errors.password.message}</span>
                             }
                             {
-                                errors.password?.type === 'pattern' && <span class="text-red-500">{errors.password.message}</span>
+                                errors.password?.type === 'pattern' && <span className="text-red-500">{errors.password.message}</span>
                             }
                         </label>
                     </div>
@@ -136,7 +136,7 @@ const Signup = () => {
                     <div className='pt-4 text-center'>
                         <Link className='text-secondary font-medium' to='/signIn'>Already have an account?</Link>
                     </div>
-                    <div class="divider">OR</div>
+                    <div className="divider">OR</div>
                     <div className='flex items-center justify-center pt-4'>
                         <button onClick={() => signInWithGoogle()} className='p-3 border-2 border-gray-200 w-[60px] h-[60px] mx-2' type="submit"> <img src={googleIcon} alt="google-icon" /> </button>
                         <button onClick={() => signInWithGithub()} className='p-3 border-2 border-gray-200 w-[60px] h-[60px] mx-2' type="submit"> <img src={githubIcon} alt="google-icon" /> </button>
