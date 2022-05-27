@@ -11,12 +11,12 @@ const Dashboard = () => {
                     <h2 style={{ fontFamily: 'Merienda' }} className='font-bold text-3xl text-secondary'>DashBoard</h2>
                     <Outlet></Outlet>
                 </div>
-                <div className="drawer-side">
+                <div className="drawer-side bg-slate-200 rounded">
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-                    <ul className="menu p-4 overflow-y-auto w-80 text-base-content bg-slate-200 rounded-md">
-                        <li className='pb-3 font-medium'><Link to='/dashboard'>My Orders</Link></li>
-                        <li className='pb-3 font-medium'><Link to='/dashboard/reviews'>Add Reviews</Link></li>
-                        <li className='font-medium'><Link to='/dashboard/profile'>My Profile</Link></li>
+                    <ul className="menu p-4 overflow-y-auto w-80 text-base-content bg-slate-200 lg:bg-transparent rounded-md">
+                        <li className='font-medium hover:text-secondary'><Link to='/dashboard'>My Orders</Link></li>
+                        <li className='font-medium hover:text-secondary'><Link to='/dashboard/reviews'>Add Reviews</Link></li>
+                        <li className='font-medium hover:text-secondary'><Link to='/dashboard/profile'>My Profile</Link></li>
                     </ul>
                 </div>
             </div>
