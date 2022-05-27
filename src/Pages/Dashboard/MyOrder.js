@@ -1,10 +1,16 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const MyOrder = () => {
+
+    const [user] = useAuthState(auth);
+
+
     return (
-        <div>
-            <h2>My Order Page</h2>
-        </div>
+        <section>
+
+        </section>
     );
 };
 
