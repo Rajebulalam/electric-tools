@@ -7,6 +7,7 @@ import Loading from './Shared/Loading';
 import googleIcon from '../images/google.png';
 import githubIcon from '../images/github.png';
 import faceBookIcon from '../images/facebook.png';
+import useToken from '../hooks/useToken';
 
 const Signup = () => {
 
@@ -29,13 +30,15 @@ const Signup = () => {
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
+    const [token] = useToken(user || googleUser);
+
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (user || googleUser || githubUser) {
+        if (token) {
             navigate('/home');
         }
-    }, [user, googleUser, githubUser, navigate]);
+    }, [token, navigate]);
 
     if (loading || updating || googleLoading || githubLoading) {
         return <Loading></Loading>;

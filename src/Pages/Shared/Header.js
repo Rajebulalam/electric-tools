@@ -11,6 +11,7 @@ const Header = () => {
 
     const logOut = async () => {
         await signOut(auth);
+        localStorage.removeItem('accessToken');
         navigate('/signIn');
     }
 

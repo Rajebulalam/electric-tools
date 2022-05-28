@@ -7,6 +7,7 @@ import Loading from './Shared/Loading';
 import googleIcon from '../images/google.png';
 import githubIcon from '../images/github.png';
 import faceBookIcon from '../images/facebook.png';
+import useToken from '../hooks/useToken';
 
 const SignIn = () => {
 
@@ -28,16 +29,19 @@ const SignIn = () => {
     const [signInWithGithub, githubUser, githubLoading, githubError] = useSignInWithGithub(auth);
 
     const [authUser, authLoading] = useAuthState(auth);
+
+    const [token] = useToken(user || googleUser);
+
     const navigate = useNavigate();
 
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
     useEffect(() => {
-        if (user || authUser || githubUser || googleUser) {
+        if (token) {
             navigate(from, { replace: true });
         }
-    }, [user, authUser, githubUser, googleUser, navigate, from]);
+    }, [token, navigate, from]);
 
     if (loading || authLoading || githubLoading || googleLoading) {
         return <Loading></Loading>;
