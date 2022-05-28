@@ -7,6 +7,7 @@ import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import MyOrder from './Pages/Dashboard/MyOrder';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import Home from './Pages/HomePage/Home';
+import NotFound from './Pages/NotFound';
 import Purchase from './Pages/Purchase';
 import RequireAuth from './Pages/RequireAuth';
 import Footer from './Pages/Shared/Footer';
@@ -38,6 +39,7 @@ function App() {
         </Route>
         <Route path='signup' element={<Signup></Signup>}></Route>
         <Route path='signIn' element={<SignIn></SignIn>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer></ToastContainer>

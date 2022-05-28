@@ -9,7 +9,7 @@ const MyOrder = () => {
     const email = user?.email;
 
     useEffect(() => {
-        const url = `http://localhost:5000/items?email=${email}`;
+        const url = `https://intense-garden-12250.herokuapp.com/items?email=${email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -18,7 +18,7 @@ const MyOrder = () => {
     }, [email])
 
     const handleDelete = id => {
-        const url = `http://localhost:5000/items/${id}`;
+        const url = `https://intense-garden-12250.herokuapp.com/items/${id}`;
         fetch(url, {
             method: 'DELETE'
         })

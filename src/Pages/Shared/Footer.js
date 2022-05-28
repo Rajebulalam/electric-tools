@@ -50,7 +50,7 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='pt-3'>
+                    <div className='pt-3 flex items-center justify-center'>
                         <Link className='px-2' to='/'>
                             <FontAwesomeIcon className='font-awesome text-black bg-white hover:bg-secondary p-2 rounded-full text-3xl' icon={faGithub}></FontAwesomeIcon>
                         </Link>

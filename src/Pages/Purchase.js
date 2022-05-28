@@ -11,7 +11,7 @@ const Purchase = () => {
 
     const { image, name, description, minimumOrderQuantity, availableOrderQuantity, price } = product;
 
-    const url = `http://localhost:5000/product/${id}`;
+    const url = `https://intense-garden-12250.herokuapp.com/product/${id}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -54,7 +54,7 @@ const Purchase = () => {
             total
         };
 
-        fetch('http://localhost:5000/product', {
+        fetch('https://intense-garden-12250.herokuapp.com/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

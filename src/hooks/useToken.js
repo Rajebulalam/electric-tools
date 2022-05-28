@@ -11,7 +11,7 @@ const useToken = user => {
             name
         };
         if (email) {
-            fetch(`http://localhost:5000/admins/${email}`, {
+            fetch(`https://intense-garden-12250.herokuapp.com/admins/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

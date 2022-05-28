@@ -8,7 +8,7 @@ const MyProfile = () => {
     const [user] = useAuthState(auth);
 
     const { data: users, isLoading, refetch } = useQuery('users', () =>
-        fetch(`http://localhost:5000/users?email=${user?.email}`).then(
+        fetch(`https://intense-garden-12250.herokuapp.com/users?email=${user?.email}`).then(
             res => res.json()
         )
     )
@@ -39,7 +39,7 @@ const MyProfile = () => {
             img
         };
 
-        fetch(`http://localhost:5000/users/${email}`, {
+        fetch(`https://intense-garden-12250.herokuapp.com/users/${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
