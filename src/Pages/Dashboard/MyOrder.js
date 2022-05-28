@@ -7,15 +7,15 @@ const MyOrder = () => {
     const [user] = useAuthState(auth);
     const [items, setItems] = useState([]);
     const email = user?.email;
-    const url = `http://localhost:5000/items?email=${email}`;
 
     useEffect(() => {
+        const url = `http://localhost:5000/items?email=${email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
                 setItems(data);
             })
-    }, [url])
+    }, [email])
 
     const handleDelete = id => {
         const url = `http://localhost:5000/items/${id}`;
@@ -25,7 +25,7 @@ const MyOrder = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.deletedCount > 0) {
-                    const remaining = items.filter(product => product._id !== id);
+                    const remaining = items.filter(item => item._id !== id);
                     setItems(remaining);
                 }
             })
@@ -33,6 +33,7 @@ const MyOrder = () => {
 
     return (
         <section>
+            <h2 style={{ fontFamily: 'Merienda' }} className='font-bold text-center text-3xl text-secondary'>My Orders</h2>
             <div className="overflow-x-auto pt-8">
                 <table className="table w-full">
                     <thead>

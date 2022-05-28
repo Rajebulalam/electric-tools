@@ -16,10 +16,25 @@ const Purchase = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 setProduct(data);
             })
     }, [url]);
+
+    const [quantity, setQuantity] = useState(500);
+
+    const handleQuantity = event => {
+        setQuantity(event.target.value);
+    }
+    let error;
+
+    if (quantity >= 500 && quantity <= 10000) {
+        console.log('');
+    }
+    else if (quantity < 500) {
+        error = 'Your Order Quantity Should Have Over 500pc';
+    } else {
+        error = "You can't purchase more than 10000 pc";
+    }
 
     const unitPrice = price;
     const handleSubmit = event => {
@@ -48,27 +63,9 @@ const Purchase = () => {
         })
             .then(res => res.json())
             .then(data => {
-                alert('Data Added')
-                event.target.reset();
                 console.log(data);
+                event.target.reset();
             })
-    }
-
-    const [quantity, setQuantity] = useState(500);
-
-    const handleQuantity = event => {
-        setQuantity(event.target.value);
-        console.log(event.target.value);
-    }
-    let error;
-
-    if (quantity >= 500 && quantity <= 10000) {
-        console.log('');
-    }
-    else if (quantity < 500) {
-        error = 'Your Order Quantity Should Have Over 500pc';
-    } else {
-        error = "You can't purchase more than 10000 pc";
     }
 
     return (
@@ -102,7 +99,7 @@ const Purchase = () => {
                                 <p className='text-red-500'> {error} </p>
                             </div>
                             <div className='flex items-center justify-center pt-5 py-3'>
-                                <button disabled={error} type="submit" className='btn w-[110px] mx-1 bg-white text-secondary hover:bg-gradient-to-b hover:from-accent hover:to-neutral hover:text-white'>Purchase</button>
+                                <button type="submit" disabled={error} className='btn w-[110px] mx-1 bg-white text-secondary hover:bg-gradient-to-b hover:from-accent hover:to-neutral hover:text-white'>Purchase</button>
                             </div>
                         </form>
                     </div>

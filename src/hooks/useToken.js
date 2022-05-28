@@ -5,9 +5,13 @@ const useToken = user => {
 
     useEffect(() => {
         const email = user?.user?.email;
-        const currentUser = { email: email };
+        const name = user?.displayName;
+        const currentUser = {
+            email,
+            name
+        };
         if (email) {
-            fetch(`http://localhost:5000/users/${email}`, {
+            fetch(`http://localhost:5000/admins/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

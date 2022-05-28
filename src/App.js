@@ -3,6 +3,7 @@ import { ToastContainer } from 'react-toastify';
 import './App.css';
 import AddReview from './Pages/Dashboard/AddReview';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import MyOrder from './Pages/Dashboard/MyOrder';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import Home from './Pages/HomePage/Home';
@@ -33,6 +34,7 @@ function App() {
           <Route index element={<MyOrder></MyOrder>}></Route>
           <Route path='reviews' element={<AddReview></AddReview>}></Route>
           <Route path='profile' element={<MyProfile></MyProfile>}></Route>
+          <Route path='admin' element={<MakeAdmin></MakeAdmin>}></Route>
         </Route>
         <Route path='signup' element={<Signup></Signup>}></Route>
         <Route path='signIn' element={<SignIn></SignIn>}></Route>

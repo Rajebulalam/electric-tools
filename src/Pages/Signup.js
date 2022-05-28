@@ -46,7 +46,8 @@ const Signup = () => {
 
     let signupError;
     if (error || updateError || googleError || githubError) {
-        signupError = <p>{error?.message} || {updateError?.message} || {googleError?.message} || {githubError?.message} </p>
+        signupError = <p>{error?.message || googleError?.message || githubError?.message || updateError?.message}
+        </p>
     }
 
 

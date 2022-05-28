@@ -41,7 +41,7 @@ const Header = () => {
                             {menuItem}
                         </ul>
                     </div>
-                    <Link to='/' className="normal-case text-3xl font-bold text-secondary">Electric Tools.</Link>
+                    <Link to='/' style={{ fontFamily: 'Merienda' }} className="normal-case text-3xl font-bold text-secondary">Electric Tools.</Link>
                 </div>
                 <div className="navbar-end hidden w-8/12 lg:flex">
                     <ul className="menu menu-horizontal p-0">

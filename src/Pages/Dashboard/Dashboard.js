@@ -8,7 +8,6 @@ const Dashboard = () => {
                 <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col p-6 ml-4 rounded-md bg-slate-200">
                     <label htmlFor="dashboard-drawer" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
-                    <h2 style={{ fontFamily: 'Merienda' }} className='font-bold text-center text-3xl text-secondary'>DashBoard</h2>
                     <Outlet></Outlet>
                 </div>
                 <div className="drawer-side bg-slate-200 rounded">
@@ -17,6 +16,7 @@ const Dashboard = () => {
                         <li className='font-medium hover:text-secondary'><Link to='/dashboard'>My Orders</Link></li>
                         <li className='font-medium hover:text-secondary'><Link to='/dashboard/reviews'>Add Reviews</Link></li>
                         <li className='font-medium hover:text-secondary'><Link to='/dashboard/profile'>My Profile</Link></li>
+                        <li className='font-medium hover:text-secondary'><Link to='/dashboard/admin'>Make Admin</Link></li>
                     </ul>
                 </div>
             </div>
