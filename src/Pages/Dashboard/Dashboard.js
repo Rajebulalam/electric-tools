@@ -7,7 +7,6 @@ const Dashboard = () => {
             <div className="drawer drawer-mobile">
                 <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col p-6 ml-4 rounded-md bg-slate-200">
-                    <label htmlFor="dashboard-drawer" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
                     <Outlet></Outlet>
                 </div>
                 <div className="drawer-side bg-slate-200 rounded">

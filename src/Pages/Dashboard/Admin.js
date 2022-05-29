@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const Admin = ({ user, index, refetch }) => {
 
@@ -11,10 +12,17 @@ const Admin = ({ user, index, refetch }) => {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
             }
         })
-            .then(res => res.json())
+            .then(res => {
+                if (res.status === 403) {
+                    toast.error('Failed to Make an Admin');
+                }
+                return res.json()
+            })
             .then(data => {
-                console.log(data)
-                refetch();
+                if (data.modifiedCount > 0) {
+                    refetch();
+                    toast('Successfully make an admin');
+                }
             })
     }
 

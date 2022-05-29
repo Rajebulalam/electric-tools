@@ -5,7 +5,7 @@ const ManageOrders = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        const url = `http://localhost:5000/orders`;
+        const url = `https://intense-garden-12250.herokuapp.com/orders`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -14,7 +14,7 @@ const ManageOrders = () => {
     }, [])
 
     const handleDelete = id => {
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://intense-garden-12250.herokuapp.com/orders/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
