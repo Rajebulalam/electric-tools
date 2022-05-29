@@ -7,17 +7,19 @@ const AddProduct = () => {
         const image = event.target.image.value;
         const name = event.target.name.value;
         const description = event.target.description.value;
-        const designation = event.target.designation.value;
-        const ratings = event.target.number.value;
+        const price = event.target.price.value;
+        const minimumOrderQuantity = event.target.minimumOrderQuantity.value;
+        const availableOrderQuantity = event.target.availableOrderQuantity.value;
         const review = {
             image,
             name,
             description,
-            designation,
-            ratings
+            price,
+            minimumOrderQuantity,
+            availableOrderQuantity
         };
 
-        fetch('https://intense-garden-12250.herokuapp.com/reviews', {
+        fetch('http://localhost:5000/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -26,6 +28,7 @@ const AddProduct = () => {
         })
             .then(res => res.json())
             .then(data => {
+                console.log(data);
                 event.target.reset();
             })
     }
