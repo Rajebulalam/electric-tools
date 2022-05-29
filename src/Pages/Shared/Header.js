@@ -22,7 +22,7 @@ const Header = () => {
             user && <li className='text-gray-500 hover:text-accent mx-1 font-bold uppercase text-sm'><Link to='/dashboard'>Dashboard</Link></li>
         }
         <div>
-            <button className="btn btn-outline w-[110px] mx-1 bg-white text-secondary hover:bg-gradient-to-b hover:from-accent hover:to-neutral"><Link to='/signup'>Sign up</Link></button>
+            <button className="btn btn-outline w-[110px] mx-1 bg-white text-secondary hover:bg-gradient-to-b hover:from-accent hover:to-neutral mb-3 sm:mb-0"><Link to='/signup'>Sign up</Link></button>
             {
                 user ? <button onClick={logOut} className="btn btn-outline w-[110px] mx-1 sm:mt-2 bg-gradient-to-b from-accent to-neutral text-white hover:bg-gradient-to-b hover:from-white hover:to-white hover:text-secondary hover:border-secondary"><Link to='/signIn'>Sign Out</Link></button> : <button className="btn btn-outline w-[110px] mx-1 sm:mt-2 bg-gradient-to-b from-accent to-neutral text-white hover:bg-gradient-to-b hover:from-white hover:to-white hover:text-secondary hover:border-secondary"><Link to='/signIn'>Sign in</Link></button>
             }

@@ -17,6 +17,8 @@ const Dashboard = () => {
                         <li className='font-medium hover:text-secondary'><Link to='/dashboard/reviews'>Add Reviews</Link></li>
                         <li className='font-medium hover:text-secondary'><Link to='/dashboard/profile'>My Profile</Link></li>
                         <li className='font-medium hover:text-secondary'><Link to='/dashboard/admin'>Make Admin</Link></li>
+                        <li className='font-medium hover:text-secondary'><Link to='/dashboard/manageOrders'>Manage All Orders</Link></li>
+                        <li className='font-medium hover:text-secondary'><Link to='/dashboard/addProduct'>Add A Product</Link></li>
                     </ul>
                 </div>
             </div>
