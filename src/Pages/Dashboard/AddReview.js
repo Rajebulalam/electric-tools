@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const AddReview = () => {
+
+    const [rating, setRating] = useState(1);
 
     const addReview = event => {
         event.preventDefault();
@@ -9,25 +12,29 @@ const AddReview = () => {
         const description = event.target.description.value;
         const designation = event.target.designation.value;
         const ratings = event.target.number.value;
-        const review = {
-            image,
-            name,
-            description,
-            designation,
-            ratings
-        };
-
-        fetch('https://intense-garden-12250.herokuapp.com/reviews', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(review)
-        })
-            .then(res => res.json())
-            .then(data => {
-                event.target.reset();
+        if (ratings > 0 && ratings < 6) {
+            const review = {
+                image,
+                name,
+                description,
+                designation,
+                ratings
+            };
+            fetch('https://intense-garden-12250.herokuapp.com/reviews', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(review)
             })
+                .then(res => res.json())
+                .then(data => {
+                    event.target.reset();
+                    toast.success('Review Added');
+                })
+        } else {
+            toast.error("You can't give ratings less than 0 and more than 5");
+        }
     }
 
     return (

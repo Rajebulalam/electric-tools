@@ -8,6 +8,7 @@ import googleIcon from '../images/google.png';
 import githubIcon from '../images/github.png';
 import faceBookIcon from '../images/facebook.png';
 import useToken from '../hooks/useToken';
+import { toast } from 'react-toastify';
 
 const SignIn = () => {
 
@@ -26,7 +27,7 @@ const SignIn = () => {
 
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
-    const [signInWithGithub, githubUser, githubLoading, githubError] = useSignInWithGithub(auth);
+    const [signInWithGithub, githubLoading, githubError] = useSignInWithGithub(auth);
 
     const [authUser, authLoading] = useAuthState(auth);
 
@@ -54,6 +55,7 @@ const SignIn = () => {
 
     const onSubmit = async (data) => {
         await signInWithEmailAndPassword(data.email, data.password);
+        toast.success('Success Fully Sign In');
     };
 
     return (

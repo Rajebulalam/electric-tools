@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const AddProduct = () => {
 
@@ -28,7 +29,7 @@ const AddProduct = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                toast.success('New Product Added');
                 event.target.reset();
             })
     }

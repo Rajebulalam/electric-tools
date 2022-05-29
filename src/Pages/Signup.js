@@ -8,6 +8,7 @@ import googleIcon from '../images/google.png';
 import githubIcon from '../images/github.png';
 import faceBookIcon from '../images/facebook.png';
 import useToken from '../hooks/useToken';
+import { toast } from 'react-toastify';
 
 const Signup = () => {
 
@@ -54,6 +55,7 @@ const Signup = () => {
     const onSubmit = async (data) => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data?.name });
+        toast.success('Success Fully User Created');
     };
 
     return (

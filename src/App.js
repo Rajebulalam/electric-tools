@@ -18,6 +18,7 @@ import Footer from './Pages/Shared/Footer';
 import Header from './Pages/Shared/Header';
 import SignIn from './Pages/SignIn';
 import Signup from './Pages/Signup';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
