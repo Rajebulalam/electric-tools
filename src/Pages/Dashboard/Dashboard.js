@@ -1,7 +1,14 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
+import auth from '../../firebase.init';
+import useAdmin from '../../hooks/useAdmin';
 
 const Dashboard = () => {
+
+    const [user] = useAuthState(auth);
+    const [admin] = useAdmin(user);
+
     return (
         <section className='px-4 sm:px-10 py-10'>
             <div className="drawer drawer-mobile">
@@ -12,12 +19,17 @@ const Dashboard = () => {
                 <div className="drawer-side bg-slate-200 rounded">
                     <label for="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 overflow-y-auto w-80 text-base-content bg-slate-200 lg:bg-transparent rounded-md">
-                        <li className='font-medium hover:text-secondary'><Link to='/dashboard'>My Orders</Link></li>
-                        <li className='font-medium hover:text-secondary'><Link to='/dashboard/reviews'>Add Reviews</Link></li>
                         <li className='font-medium hover:text-secondary'><Link to='/dashboard/profile'>My Profile</Link></li>
-                        <li className='font-medium hover:text-secondary'><Link to='/dashboard/admin'>Make Admin</Link></li>
-                        <li className='font-medium hover:text-secondary'><Link to='/dashboard/manageOrders'>Manage All Orders</Link></li>
-                        <li className='font-medium hover:text-secondary'><Link to='/dashboard/addProduct'>Add A Product</Link></li>
+                        {
+                            admin ? <>
+                                <li className='font-medium hover:text-secondary'><Link to='/dashboard/admin'>Make Admin</Link></li>
+                                <li className='font-medium hover:text-secondary'><Link to='/dashboard/manageOrders'>Manage All Orders</Link></li>
+                                <li className='font-medium hover:text-secondary'><Link to='/dashboard/addProduct'>Add A Product</Link></li>
+                            </> : <>
+                                <li className='font-medium hover:text-secondary'><Link to='/dashboard'>My Orders</Link></li>
+                                <li className='font-medium hover:text-secondary'><Link to='/dashboard/reviews'>Add Reviews</Link></li>
+                            </>
+                        }
                     </ul>
                 </div>
             </div>

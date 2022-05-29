@@ -10,7 +10,7 @@ const AddProduct = () => {
         const price = event.target.price.value;
         const minimumOrderQuantity = event.target.minimumOrderQuantity.value;
         const availableOrderQuantity = event.target.availableOrderQuantity.value;
-        const review = {
+        const product = {
             image,
             name,
             description,
@@ -19,12 +19,12 @@ const AddProduct = () => {
             availableOrderQuantity
         };
 
-        fetch('https://intense-garden-12250.herokuapp.com/product', {
+        fetch('http://localhost:5000/added', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(review)
+            body: JSON.stringify(product)
         })
             .then(res => res.json())
             .then(data => {
@@ -44,7 +44,7 @@ const AddProduct = () => {
                 <input className='p-2 w-full md:w-3/6 mx-auto block mb-4 rounded-sm' type="text" name="minimumOrderQuantity" id="minimumOrderQuantity" placeholder='Minimum Ordered Quantity' />
                 <input className='p-2 w-full md:w-3/6 mx-auto block mb-4 rounded-sm' type="text" name="availableOrderQuantity" id="availableOrderQuantity" placeholder='Available Ordered Quantity' />
                 <div className='flex items-center justify-center'>
-                    <button type="submit" className='btn bg-white text-secondary hover:bg-gradient-to-b hover:from-accent hover:to-neutral hover:text-white'>Add Review</button>
+                    <button type="submit" className='btn bg-white text-secondary hover:bg-gradient-to-b hover:from-accent hover:to-neutral hover:text-white'>Add Product</button>
                 </div>
             </form>
         </section>
