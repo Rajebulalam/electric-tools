@@ -19,6 +19,7 @@ const Header = () => {
         <li className='text-gray-500 hover:text-accent mx-1 font-bold uppercase text-sm'><Link to='/'>Home</Link></li>
         <li className='text-gray-500 hover:text-accent mx-1 font-bold uppercase text-sm'><Link to='/purchase'>Purchase</Link></li>
         <li className='text-gray-500 hover:text-accent mx-1 font-bold uppercase text-sm'><Link to='/blogs'>Blogs</Link></li>
+        <li className='text-gray-500 hover:text-accent mx-1 font-bold uppercase text-sm'><Link to='/portfolio'>Portfolio</Link></li>
         {
             user && <li className='text-gray-500 hover:text-accent mx-1 font-bold uppercase text-sm'><Link to='/dashboard'>Dashboard</Link></li>
         }

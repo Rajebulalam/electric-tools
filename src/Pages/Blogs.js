@@ -3,7 +3,7 @@ import React from 'react';
 const Blogs = () => {
     return (
         <section className='px-6 sm:px-16 py-10'>
-            <h2 style={{ fontFamily: 'Merienda' }} className='text-3xl text-center font-bold py-6'>My Blogs</h2>
+            <h2 style={{ fontFamily: 'Merienda' }} className='text-3xl text-center font-bold pb-8'>My Blogs</h2>
             <div className='p-4 border mb-5'>
                 <h2 style={{ fontFamily: 'Merienda' }} className='text-2xl py-2'>How will you improve the performance of a React Application?</h2>
                 <p className='text-[18px]'>Optimizing application performance is key for developers who are mindful of keeping a user's experience positive to keep them on an app and engaged. In React applications, we are guaranteed a very fast UI by default. However, as an application grows, developers may encounter some performance issues.

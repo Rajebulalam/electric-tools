@@ -23,7 +23,7 @@ const Admin = ({ user, index, refetch }) => {
         <tr>
             <th>{index + 1}</th>
             <td>{email}</td>
-            <td>{role !== 'admin' ? <button onClick={makeAdmin} class="btn btn-sm bg-black hover:bg-white hover:text-black border-1 border-black">Make Admin</button> : 'Already Admin'}</td>
+            <td>{role !== 'admin' ? <button onClick={makeAdmin} className="btn btn-sm bg-black hover:bg-white hover:text-black border-1 border-black">Make Admin</button> : 'Already Admin'}</td>
         </tr>
     );
 };

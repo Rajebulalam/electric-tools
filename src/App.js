@@ -11,6 +11,7 @@ import MyOrder from './Pages/Dashboard/MyOrder';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import Home from './Pages/HomePage/Home';
 import NotFound from './Pages/NotFound';
+import Portfolio from './Pages/Portfolio';
 import Purchase from './Pages/Purchase';
 import RequireAuth from './Pages/RequireAuth';
 import Footer from './Pages/Shared/Footer';
@@ -31,6 +32,7 @@ function App() {
           </RequireAuth>
         }></Route>
         <Route path='blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='portfolio' element={<Portfolio></Portfolio>}></Route>
         <Route path='dashboard' element={
           <RequireAuth>
             <Dashboard></Dashboard>
