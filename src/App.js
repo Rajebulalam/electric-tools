@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import './App.css';
+import Blogs from './Pages/Blogs';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import AddReview from './Pages/Dashboard/AddReview';
 import Dashboard from './Pages/Dashboard/Dashboard';
@@ -29,6 +30,7 @@ function App() {
             <Purchase></Purchase>
           </RequireAuth>
         }></Route>
+        <Route path='blogs' element={<Blogs></Blogs>}></Route>
         <Route path='dashboard' element={
           <RequireAuth>
             <Dashboard></Dashboard>
