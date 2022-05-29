@@ -17,9 +17,8 @@ const Dashboard = () => {
                     <Outlet></Outlet>
                 </div>
                 <div className="drawer-side bg-slate-200 rounded">
-                    <label for="my-drawer-2" className="drawer-overlay"></label>
+                    <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 overflow-y-auto w-80 text-base-content bg-slate-200 lg:bg-transparent rounded-md">
-                        <li className='font-medium hover:text-secondary'><Link to='/dashboard/profile'>My Profile</Link></li>
                         {
                             admin ? <>
                                 <li className='font-medium hover:text-secondary'><Link to='/dashboard/admin'>Make Admin</Link></li>
@@ -30,6 +29,7 @@ const Dashboard = () => {
                                 <li className='font-medium hover:text-secondary'><Link to='/dashboard/reviews'>Add Reviews</Link></li>
                             </>
                         }
+                        <li className='font-medium hover:text-secondary'><Link to='/dashboard/profile'>My Profile</Link></li>
                     </ul>
                 </div>
             </div>
