@@ -19,7 +19,7 @@ const AddProduct = () => {
             availableOrderQuantity
         };
 
-        fetch('http://localhost:5000/added', {
+        fetch('https://intense-garden-12250.herokuapp.com/added', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
