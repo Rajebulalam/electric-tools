@@ -6,7 +6,7 @@ const NotFound = () => {
     return (
         <section className='px-4 sm:px-16 py-10'>
             <Helmet>
-                <title>Dress Warehouse - Not Found</title>
+                <title>Electric Tools - Not Found</title>
             </Helmet>
             <div className='py-5 text-center'>
                 <h1 className='text-5xl font-extrabold pb-6'>Opps!</h1>

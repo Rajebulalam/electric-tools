@@ -19,6 +19,7 @@ import Header from './Pages/Shared/Header';
 import SignIn from './Pages/SignIn';
 import Signup from './Pages/Signup';
 import 'react-toastify/dist/ReactToastify.css';
+import Payment from './Pages/Dashboard/Payment';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path='admin' element={<MakeAdmin></MakeAdmin>}></Route>
           <Route path='manageOrders' element={<ManageOrders></ManageOrders>}></Route>
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
           <Route path='addProduct' element={<AddProduct></AddProduct>}></Route>
         </Route>
         <Route path='signup' element={<Signup></Signup>}></Route>

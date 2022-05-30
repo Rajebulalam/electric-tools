@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const MyOrder = () => {
@@ -42,8 +43,10 @@ const MyOrder = () => {
                             <th>Name</th>
                             <th>Email</th>
                             <th>Product Name</th>
+                            <th>Quantity</th>
                             <th>Price</th>
-                            <th>Remove Product</th>
+                            <th>Payment</th>
+                            <th>Remove</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -54,7 +57,21 @@ const MyOrder = () => {
                                     <td>{item.userName}</td>
                                     <td>{item.email}</td>
                                     <td>{item.productName}</td>
+                                    <td>{item.quantity}</td>
                                     <td>{item.total}</td>
+                                    <td>
+                                        {
+                                            (!item.paid) && <Link to={`/dashboard/payment/${item._id}`}> <label type='submit' className=" btn modal-button btn-sm bg-white text-secondary hover:bg-gradient-to-b hover:from-accent hover:to-neutral hover:text-white">
+                                                pay
+                                            </label></Link>
+                                        }
+                                        {
+                                            (item.paid) && <div>
+                                                <p><span className='text-success'>paid</span></p>
+                                                <p>Transaction Id: <span>{item.transactionId}</span></p>
+                                            </div>
+                                        }
+                                    </td>
                                     <td><label type='submit' htmlFor="confirm-modal" className="btn modal-button btn-sm bg-white text-secondary hover:bg-gradient-to-b hover:from-accent hover:to-neutral hover:text-white">
                                         Delete
                                     </label></td>

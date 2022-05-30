@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 
@@ -99,7 +99,7 @@ const Purchase = () => {
                                 <p className='text-red-500'> {error} </p>
                             </div>
                             <div className='flex items-center justify-center pt-5 py-3'>
-                                <button type="submit" disabled={error} className='btn w-[110px] mx-1 bg-white text-secondary hover:bg-gradient-to-b hover:from-accent hover:to-neutral hover:text-white'>Purchase</button>
+                                <button type="submit" disabled={error} className='btn w-[150px] mx-1 bg-white text-secondary hover:bg-gradient-to-b hover:from-accent hover:to-neutral hover:text-white'> Order Now </button>
                             </div>
                         </form>
                     </div>
