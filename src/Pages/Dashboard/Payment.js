@@ -11,7 +11,7 @@ const stripePromise = loadStripe('pk_test_51L52O4FA7cP9SUHlPYxOtGzRNYt6YvUu6VjcU
 const Payment = () => {
 
     const { id } = useParams();
-    const url = `http://localhost:5000/orders/${id}`;
+    const url = `https://intense-garden-12250.herokuapp.com/orders/${id}`;
 
     const { data: order, isLoading, refetch } = useQuery(['order', id], () =>
         fetch(url, {

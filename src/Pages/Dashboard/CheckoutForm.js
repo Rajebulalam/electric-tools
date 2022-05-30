@@ -14,7 +14,7 @@ const CheckoutForm = ({ order }) => {
     const { _id, total, userName, email } = order;
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://intense-garden-12250.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -79,7 +79,7 @@ const CheckoutForm = ({ order }) => {
                 order: _id,
                 transactionId: paymentIntent.id
             };
-            fetch(`http://localhost:5000/orders/${_id}`, {
+            fetch(`https://intense-garden-12250.herokuapp.com/orders/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',
@@ -122,7 +122,7 @@ const CheckoutForm = ({ order }) => {
             }
             {
                 success && <div className='text-red-500'>
-                    <p className='text-green-500'>{success}</p>
+                    <p className='text-green-500 text-center'>{success}</p>
                     <p>Your Transaction Id : <span className='text-secondary font-medium'>{transactionId}</span></p>
                 </div>
             }

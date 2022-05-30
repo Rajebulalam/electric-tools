@@ -69,7 +69,7 @@ const MyProfile = () => {
                         }
                     </div>
                 </div>
-                <div className='bg-white rounded py-4 flex items-center justify-center'>
+                <div className='bg-white rounded px-4 py-4 flex items-center justify-center'>
                     <div>
                         <h2 style={{ fontFamily: 'Merienda' }} className='font-bold text-3xl text-secondary pb-6'>Update Profile</h2>
                         <form onSubmit={updateProfile}>
@@ -97,7 +97,7 @@ const MyProfile = () => {
                                 <label style={{ fontFamily: 'Merienda' }} className='font-bold' htmlFor="img">Image Link</label>
                                 <input className='bg-slate-200 p-3 w-full lg:max-w-lg rounded-sm' type="text" name="img" id="img" />
                             </div>
-                            <div>
+                            <div className='flex items-start justify-center'>
                                 <button type="submit" className='btn'>Update Profile</button>
                             </div>
                         </form>

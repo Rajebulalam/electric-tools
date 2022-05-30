@@ -72,9 +72,13 @@ const MyOrder = () => {
                                             </div>
                                         }
                                     </td>
-                                    <td><label type='submit' htmlFor="confirm-modal" className="btn modal-button btn-sm bg-white text-secondary hover:bg-gradient-to-b hover:from-accent hover:to-neutral hover:text-white">
-                                        Delete
-                                    </label></td>
+                                    <td>
+                                        {
+                                            (!item.paid) && <label type='submit' htmlFor="confirm-modal" className="btn modal-button btn-sm bg-white text-secondary hover:bg-gradient-to-b hover:from-accent hover:to-neutral hover:text-white">
+                                                Delete
+                                            </label>
+                                        }
+                                    </td>
                                     <td>
                                         <input type="checkbox" id="confirm-modal" className="modal-toggle" />
                                         <div className="modal modal-bottom sm:modal-middle">
