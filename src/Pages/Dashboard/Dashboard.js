@@ -19,17 +19,17 @@ const Dashboard = () => {
                 <div className="drawer-side bg-slate-200 rounded">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 overflow-y-auto w-80 text-base-content bg-slate-200 lg:bg-transparent rounded-md">
+                        <li className='font-medium hover:text-secondary'><Link to='/dashboard'>My Profile</Link></li>
                         {
                             admin ? <>
                                 <li className='font-medium hover:text-secondary'><Link to='/dashboard/admin'>Make Admin</Link></li>
                                 <li className='font-medium hover:text-secondary'><Link to='/dashboard/manageOrders'>Manage All Orders</Link></li>
                                 <li className='font-medium hover:text-secondary'><Link to='/dashboard/addProduct'>Add A Product</Link></li>
                             </> : <>
-                                <li className='font-medium hover:text-secondary'><Link to='/dashboard'>My Orders</Link></li>
+                                <li className='font-medium hover:text-secondary'><Link to='/dashboard/order'>My Orders</Link></li>
                                 <li className='font-medium hover:text-secondary'><Link to='/dashboard/reviews'>Add Reviews</Link></li>
                             </>
                         }
-                        <li className='font-medium hover:text-secondary'><Link to='/dashboard/profile'>My Profile</Link></li>
                     </ul>
                 </div>
             </div>

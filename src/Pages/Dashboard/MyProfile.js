@@ -13,7 +13,7 @@ const MyProfile = () => {
         )
     )
 
-    if (isLoading || undefined) {
+    if (isLoading === true || undefined) {
         return <Loading></Loading>;
     }
 
