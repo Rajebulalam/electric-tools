@@ -13,7 +13,7 @@ const MyProfile = () => {
         )
     )
 
-    if (isLoading === true || undefined) {
+    if (isLoading) {
         return <Loading></Loading>;
     }
 
@@ -38,6 +38,10 @@ const MyProfile = () => {
             linkedin,
             img
         };
+
+        if (update.true) {
+
+        }
 
         fetch(`https://intense-garden-12250.herokuapp.com/users/${email}`, {
             method: 'PUT',
@@ -79,7 +83,7 @@ const MyProfile = () => {
                             </div>
                             <div className="pb-4">
                                 <label style={{ fontFamily: 'Merienda' }} className='font-bold' htmlFor="district">District</label>
-                                <input className='bg-slate-200 p-2 w-full lg:max-w-lg rounded-sm' t type="text" name="district" id="district" />
+                                <input className='bg-slate-200 p-2 w-full lg:max-w-lg rounded-sm' type="text" name="district" id="district" />
                             </div>
                             <div className="pb-4">
                                 <label style={{ fontFamily: 'Merienda' }} className='font-bold' htmlFor="city">City</label>
