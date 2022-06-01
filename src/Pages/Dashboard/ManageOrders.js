@@ -5,7 +5,7 @@ const ManageOrders = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        const url = `http://localhost:5000/orders`;
+        const url = `https://intense-garden-12250.herokuapp.com/orders`;
         fetch(url, {
             method: 'GET',
             headers: {
