@@ -39,10 +39,6 @@ const MyProfile = () => {
             img
         };
 
-        if (update.true) {
-
-        }
-
         fetch(`https://intense-garden-12250.herokuapp.com/users/${email}`, {
             method: 'PUT',
             headers: {
